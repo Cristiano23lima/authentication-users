@@ -47,8 +47,7 @@ public class UserController {
     }
 
     @GetMapping("/info")
-    public ResponseEntity<User> info(HttpServletRequest request){
-        Principal principal = request.getUserPrincipal();
+    public ResponseEntity<User> info(Principal principal){
         return ResponseEntity.ok(authenticationService.getInfo(principal.getName()));
     }
 
